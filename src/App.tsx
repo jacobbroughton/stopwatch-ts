@@ -69,7 +69,7 @@ function App() {
   return (
     <div className="app">
       <p className="display">
-        {mString} : {sString} : {msString}
+        <span>{mString}</span> : <span>{sString}</span> : <span>{msString}</span>
       </p>
       <div className="controls">
         <button onClick={handleStart}>{stopwatchToggled ? "Stop" : "Start"}</button>{" "}
