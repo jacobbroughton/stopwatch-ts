@@ -17,6 +17,7 @@ function App() {
     setMs(0);
     setS(0);
     setM(0);
+    setLog([]);
   }
 
   function handleLog(timeString: string) {
@@ -67,7 +68,6 @@ function App() {
 
   return (
     <div className="app">
-      <p>Stopwatch</p>
       <p className="display">
         {mString} : {sString} : {msString}
       </p>
@@ -83,11 +83,13 @@ function App() {
           Log
         </button>
       </div>
-      <div className="log">
-        {log.map((logItem) => (
-          <p key={logItem}>{logItem}</p>
-        ))}
-      </div>
+      {log.length > 0 && (
+        <div className="log">
+          {log.map((logItem, index) => (
+            <p key={logItem}><span>{log.length - index}:</span> <span>{logItem}</span></p>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
