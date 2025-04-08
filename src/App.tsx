@@ -86,7 +86,9 @@ function App() {
       {log.length > 0 && (
         <div className="log">
           {log.map((logItem, index) => (
-            <p key={logItem}><span>{log.length - index}:</span> <span>{logItem}</span></p>
+            <p key={logItem}>
+              <span>{log.length - index}:</span> <span>{logItem}</span>
+            </p>
           ))}
         </div>
       )}
